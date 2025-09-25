@@ -1,3 +1,2 @@
 *.swp
-/gatekeeper
-/gaslighter
+*.wasm
