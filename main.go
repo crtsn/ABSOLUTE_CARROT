@@ -57,12 +57,12 @@ func main() {
 	FeedMessageToCarrotson(db, "HELLO KITTY")
 	FeedMessageToCarrotson(db, "HELLO WORLD")
 
-	// JSON := js.Global().Get("JSON")
-	// stmt := db.Call("prepare", "SELECT * FROM Carrotson_Branches")
-	// for stmt.Call("step").Bool() {
-	// 	row := stmt.Call("getAsObject");
-	// 	fmt.Println("Here is a row: " + JSON.Call("stringify", row).String())
-	// }
+	JSON := js.Global().Get("JSON")
+	stmt := db.Call("prepare", "SELECT * FROM Carrotson_Branches")
+	for stmt.Call("step").Bool() {
+		row := stmt.Call("getAsObject");
+		fmt.Println("Here is a row: " + JSON.Call("stringify", row).String())
+	}
 
 	message, err := CarrotsonGenerate(db, "HEL", 256)
 	if err != nil {
