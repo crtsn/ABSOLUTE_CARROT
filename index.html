@@ -6,7 +6,7 @@
 		<script src="wasm_exec.js"></script>
         <script>
 	    	const go = new Go();
-			wasm_promise = WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
+			wasm_promise = WebAssembly.instantiateStreaming(fetch("./main.wasm"), go.importObject)
 			initSqlJs().then(function(SQL){
 				console.log("sql js inited");
 				window.db = new SQL.Database();
